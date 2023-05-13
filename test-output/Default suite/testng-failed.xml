@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qalegend.qa.testcases.UserManagementTestCases">
         <methods>
-          <include name="addUser"/>
+          <include name="searchFunctionalityCheck"/>
           <include name="setUp"/>
           <include name="quit"/>
         </methods>

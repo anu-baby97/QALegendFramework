@@ -1,0 +1,3 @@
+21:50:36.638 [main] INFO  com.qalegend.qa.testcases.LoginPageTestCases - Starting login...
+21:50:36.640 [main] INFO  com.qalegend.qa.testcases.LoginPageTestCases - Entering the user name and password
+13:41:36.351 [main] INFO  com.qalegend.qa.testcases.UserManagementTestCases - --Menu expansion is displayed--

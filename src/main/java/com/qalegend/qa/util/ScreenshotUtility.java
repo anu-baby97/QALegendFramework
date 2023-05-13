@@ -2,33 +2,19 @@ package com.qalegend.qa.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+
+import com.qalegend.qa.base.TestBase;
 
 
-public class ScreenshotUtility{
-	WebDriver driver;
-	
-	public String captureScreen(String tname) throws IOException {
+public class ScreenshotUtility extends TestBase {
 
-		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-				
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		String destination = System.getProperty("user.dir") + "\\screenshots\\" + tname + "_" + timeStamp + ".png";
-
-		try {
-			FileUtils.copyFile(source, new File(destination));
-		} catch (Exception e) {
-			e.getMessage();
-		}
-		return destination;
-
+	public static void takeScreenshotAtEndOfTest() throws IOException {
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String currentDir = System.getProperty("user.dir");
+		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
 	}
-
 }
